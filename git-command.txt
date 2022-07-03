@@ -1,0 +1,12 @@
+git clone [github directory online location]
+git status
+git add . --> track all files in folder that about to push to github
+git commit -m [TITLE message] -m [DESCRIPTION message] --> *)-m: for message to be displayed in github about the commited change))
+git push --> push commited change to github
+git push origin master --> 'origin' means location of repository on our github, 'master' means the branch that we want to push to
+
+git init --> for INEXISTING DIRECTORY in GITHUB repository
+git add [file-name]
+*) git remote add origin https://github.com/falahw/learn_java.git --> PUT a LINK something LIKE THIS
+*) git remote -v --> shows ANY REMOTE repository THAT have CONNECTED to the REPOs
+git push -u origin master --> USE '-u' SO in the FUTURE it will ONLY NEED to TYPE 'git push'
