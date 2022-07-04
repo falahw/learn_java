@@ -23,4 +23,10 @@ git checkout --> CAN be used to TRACK MODIFICATIONS in SOME FILES or NOT
 git checkout -b [NAME of FEATURE BRANCH] --> SYMBOL '-b' is USED WHEN you NEED to CREATE a FEATURE BRANCH
 git checkout [NAME of FEATURE BRANCH] --> USED WHEN you NEED to SWITCH beetwen BRANCH are we IN
 git diff [BRANCH name] --> CHECK DIFFERENCES before and after MODIFICATION //input 'q' to QUIT from THIS MODE ONCE you are IN
-git merge [BRANCH name] --> MERGE MODIFICATION from BRANCH feature TO the MAIN/MASTER
+
+*)UNCOMMON MERGING practice: git merge [BRANCH name] --> MERGE MODIFICATION from BRANCH feature TO the MAIN/MASTER
+
+*)COMMON MERGING practice:
+git push
+git push --set-upstream origin [BRANCH name] --> DO this IF the BRANCH is NEVER been SYCNHRONIZED with REPOSITORY in our github
+=> COMMAND' --set-upstream' is SORT VERSION of 'u'
