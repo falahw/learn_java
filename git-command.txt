@@ -1,7 +1,8 @@
 git clone [github directory online location]
-git status --> CHECK whether there are MODIFICATION to SOME FILES or NOT
+git status --> CHECK whether there are MODIFICATION to SOME FILES or NOT >>>> ALWAYS DO THIS!!! (BEFORE do any git-ACTION) <<<<
 git add . --> TRACK all FILES in folder that ABOUT to PUSH to github
-git commit -m [TITLE message] -m [DESCRIPTION message] --> *)-m: for message to be displayed in github about the commited change))
+*)for 1st COMMIT: git commit -m [TITLE message] -m [DESCRIPTION message] --> *)-m: for message to be displayed in github about the commited change))
+*)for NEXT COMMIT: git commit -am [DESCRIPTION message] --> -am: GATHER 'git add' and 'git commit -m ...' AT ONE COMMAND
 git push --> push commited change to github
 git push origin master --> 'origin' means location of repository on our github, 'master' means the branch that we want to push to
 
@@ -30,3 +31,6 @@ git diff [BRANCH name] --> CHECK DIFFERENCES before and after MODIFICATION //inp
 git push
 git push --set-upstream origin [BRANCH name] --> DO this IF the BRANCH is NEVER been SYCNHRONIZED with REPOSITORY in our github
 => COMMAND' --set-upstream' is SORT VERSION of 'u'
+git pull --> PULL UPDATE from MERGED FEATURE BRANCH in github TO LOCAL MASTER
+git branch --set-upstream-to=origin/<branch> master --> to FORCE 'git pull'; DO this BEFORE DOING 'git pull'
+git branch -d [BRANCH name] --> DELETE BRANCH with name [BRANCH name]
