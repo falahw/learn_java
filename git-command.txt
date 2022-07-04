@@ -34,3 +34,8 @@ git push --set-upstream origin [BRANCH name] --> DO this IF the BRANCH is NEVER 
 git pull --> PULL UPDATE from MERGED FEATURE BRANCH in github TO LOCAL MASTER
 git branch --set-upstream-to=origin/<branch> master --> to FORCE 'git pull'; DO this BEFORE DOING 'git pull'
 git branch -d [BRANCH name] --> DELETE BRANCH with name [BRANCH name]
+
+STASHING on github (still BRANCH topic)
+==================
+git stash --> HIDE any FILES with 'modified' STATUS  from COMMAND 'git status' ==> CAN be CONSIDERED as PENDING COMMIT
+git stash apply --> UNDO from 'git-stash'
