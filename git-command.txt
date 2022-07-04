@@ -1,12 +1,26 @@
 git clone [github directory online location]
-git status
-git add . --> track all files in folder that about to push to github
+git status --> CHECK whether there are MODIFICATION to SOME FILES or NOT
+git add . --> TRACK all FILES in folder that ABOUT to PUSH to github
 git commit -m [TITLE message] -m [DESCRIPTION message] --> *)-m: for message to be displayed in github about the commited change))
 git push --> push commited change to github
 git push origin master --> 'origin' means location of repository on our github, 'master' means the branch that we want to push to
 
 git init --> for INEXISTING DIRECTORY in GITHUB repository
-git add [file-name]
+git add [file NAME]
 *) git remote add origin https://github.com/falahw/learn_java.git --> PUT a LINK something LIKE THIS
 *) git remote -v --> shows ANY REMOTE repository THAT have CONNECTED to the REPOs
 git push -u origin master --> USE '-u' SO in the FUTURE it will ONLY NEED to TYPE 'git push'
+
+ssh-keygen -t rsa -b 4096 -C [user]@[domain].com --> Generating public/private rsa key pair
+
+BRANCHING on github
+===================
+git branch --> to LIST FEATURE BRANCHES in OUR LOCAL-GIT DIRECTORY
+=> this COMMAND will LIST something LIKE THIS:
+* main/master/[NAME of BRANCH] --> SYMBOL '*' means POSITION of WHICH CURRENT BRANCH are we IN
+
+git checkout --> CAN be used to TRACK MODIFICATIONS in SOME FILES or NOT
+git checkout -b [NAME of FEATURE BRANCH] --> SYMBOL '-b' is USED WHEN you NEED to CREATE a FEATURE BRANCH
+git checkout [NAME of FEATURE BRANCH] --> USED WHEN you NEED to SWITCH beetwen BRANCH are we IN
+git diff [BRANCH name] --> CHECK DIFFERENCES before and after MODIFICATION //input 'q' to QUIT from THIS MODE ONCE you are IN
+git merge [BRANCH name] --> MERGE MODIFICATION from BRANCH feature TO the MAIN/MASTER
