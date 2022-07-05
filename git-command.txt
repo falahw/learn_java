@@ -31,11 +31,24 @@ git diff [BRANCH name] --> CHECK DIFFERENCES before and after MODIFICATION //inp
 git push
 git push --set-upstream origin [BRANCH name] --> DO this IF the BRANCH is NEVER been SYCNHRONIZED with REPOSITORY in our github
 => COMMAND' --set-upstream' is SORT VERSION of 'u'
-git pull --> PULL UPDATE from MERGED FEATURE BRANCH in github TO LOCAL MASTER
+git pull <OR> git pull origin master --> PULL UPDATE from MERGED FEATURE BRANCH in github TO LOCAL MASTER
 git branch --set-upstream-to=origin/<branch> master --> to FORCE 'git pull'; DO this BEFORE DOING 'git pull'
 git branch -d [BRANCH name] --> DELETE BRANCH with name [BRANCH name]
+
+*)CANCEL MERGING: git merge --abort
 
 STASHING on github (still BRANCH topic)
 ==================
 git stash --> HIDE any FILES with 'modified' STATUS  from COMMAND 'git status' ==> CAN be CONSIDERED as PENDING COMMIT
 git stash apply --> UNDO from 'git-stash'
+
+UNDO CHANGES (unstage) on github
+======================
+git reset [FILE's name]* --> [FILE's name] is OPTIONAL
+git reset HEAD~1 --> UNSTAGE and UNCOMMIT LAST CHANGE until 1 COMMIT BEFORE the LAST COMMIT
+git restore --staged [FILE's name]
+
+git reset [LOG-HASHCODE] --> UNSTAGE and UNCOMMIT until CERTAIN POINT based on LOG-HASHCODE ==> does NOT MODIFY RESETTED FILES to UNSTAGE/UNCOMMIT VERSION
+git reset --hard [LOG-HASHCODE] --> SIMILAR to 'git reset [LOG-HASHCODE]' BUT ==> DOES MODIFY RESETTED FILES to UNSTAGE/UNCOMMIT VERSION
+git log --> [LOG-HASHCODE] CAN be GOT from THIS COMMAND; also LIST ALL DONE COMMIT
+*) [LOG-HASHCODE] e.g: cda2b3df7aaf931112ac4a2b4326758f43d1ec0d
