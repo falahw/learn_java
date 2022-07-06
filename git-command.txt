@@ -1,3 +1,6 @@
+https://www.atlassian.com/git/tutorials/install-git
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbHJLQkl3VGpLVVlxajBoNjJCVXBhal9EVGxhd3xBQ3Jtc0ttdFl4c1hGdkdRdDM5bXJPQWU4UE1ld3I1SmUyWktGMVRXMmUyTWtTemE5MzVzVW8xQVpOWW5zZERtcVh5OUdiM1RvdXRTellRd0VCQzJHWkpzdmdSN1preURPR1VqOTZtX3ZpYy1oczFVMWhSYm9uZw&q=https%3A%2F%2Fhelp.github.com%2Fen%2Fgithub%2Fauthenticating-to-github%2Fgenerating-a-new-ssh-key-and-adding-it-to-the-ssh-agent&v=RGOj5yH7evk
+
 git clone [github directory online location]
 git status --> CHECK whether there are MODIFICATION to SOME FILES or NOT >>>> ALWAYS DO THIS!!! (BEFORE do any git-ACTION) <<<<
 git add . --> TRACK all FILES in folder that ABOUT to PUSH to github
@@ -7,12 +10,15 @@ git push --> push commited change to github
 git push origin master --> 'origin' means location of repository on our github, 'master' means the branch that we want to push to
 
 git init --> for INEXISTING DIRECTORY in GITHUB repository
-git add [file NAME]
-*) git remote add origin https://github.com/falahw/learn_java.git --> PUT a LINK something LIKE THIS
+git add [FILE name]
+*) git remote add origin https://github.com/falahw/learn_java.git --> PUT a LINK something LIKE THIS from QUICK SETUP AFTER we CREATE NEW DIRECTORY in github with SAME NAME
 *) git remote -v --> shows ANY REMOTE repository THAT have CONNECTED to the REPOs
 git push -u origin master --> USE '-u' SO in the FUTURE it will ONLY NEED to TYPE 'git push'
 
-ssh-keygen -t rsa -b 4096 -C [user]@[domain].com --> Generating public/private rsa key pair
+CREATE SSH-KEY before 1st PUSH: ssh-keygen -t rsa -b 4096 -C [user]@[domain].com --> Generating public/private rsa key pair
+cat [YOUR SSH-KEY name] --> SHOW YOUR ssh-key ENCRYPTION
+eval "$(ssh-agent -s)" WILL RESULT 'Agent pid [some NUMBERS]' --> will START SSH-AGENT in the BACKGROUND
+ssh-add -K ~/.ssh/id_rsa --> ADDING our SSH PRIVAE KEY to the SSH-AGENT and STORE your PASSPHRASE in the KEYCHAIN; ((REPLACE 'id_rsa' with YOUR SSH-KEY name))
 
 BRANCHING on github
 ===================
@@ -52,3 +58,43 @@ git reset [LOG-HASHCODE] --> UNSTAGE and UNCOMMIT until CERTAIN POINT based on L
 git reset --hard [LOG-HASHCODE] --> SIMILAR to 'git reset [LOG-HASHCODE]' BUT ==> DOES MODIFY RESETTED FILES to UNSTAGE/UNCOMMIT VERSION
 git log --> [LOG-HASHCODE] CAN be GOT from THIS COMMAND; also LIST ALL DONE COMMIT
 *) [LOG-HASHCODE] e.g: cda2b3df7aaf931112ac4a2b4326758f43d1ec0d
+
+FORKING (step-by-step GUIDE)
+=======
+- find project we want to fork through github search
+- choose one project to be forked from the search result
+- click 'Fork' BUTTON ==> CHOOSE ACCOUNT for FORKING LOCATION ==> CLICK 'Create fork'
+- choose a file to be edited from forking repository, edit it, and then commit --> DO ALL of THESE in github WEBSITE!!!
+- FORKING will COPY WHOLE PROJECT including ALL 0f its BRANCHES
+
+== NOTE that in LARGE PROJECT, you might NEED to CREATE MULTIPLE BRANCHES, e.g: MASTER STAGING and DEV for DIFFERENT knds of ENVIRONMENT
+
+- use PR (PULL REQUEST) to ask for APPROVAL for YOUR EDIT VERSION
+- FORK SETTING of PULL REQUEST:
+>> base repository: [REPO-name of ORIGIN of FORK PROJECT]
+>> base: BRANCH of ORIGIN REPO
+>> head repository: YPUR FORKING repository LOCATION
+>> compare: BRANCH of YOUR FORKING repository
+>> CLICK 'create pull request'
+
+- MERGE (between BRANCH) with-IN YOUR FORKING repository CAN be DONE like REGULAR MERGING in LOCAL repository
+>> CHOOSE 'master' as 'base:' and YOUR FORKING BRANCH's name AS 'compare:'
+>> CLICK 'create pull request'
+>> (do what you have to do with 'Conversation' IF you have any)
+>> CLICK 'merge pull request'
+>> CLICK 'confirm merge'
+
+- CLEAN ALL BRANCHES (normally) whether in GITHUB repository or OUR LOCAL repository AFTER MERGE;
+>> UNLESS for USE like Dev, Staging, and Master
+>> 'Dev' will be USED to TAKE MERGE from FEATURE BRANCHES like DEVELOPMENT or BUG FIXES
+>> and THEN 'Dev' will be MERGED into 'Master' as FINAL MODIFICATION
+>> and THEN ALL FEATURE BRANCHES will be DELETED
+>> 'Dev' and 'Master' STAY around FOREVER; OTHER BRANCHES only for TEMPORARY
+
+FORK CYCLE
+==========
+- FORK ORIGIN repository INTO YOUR github repository
+- PULL YOUR FORK repository to YOUR LOCAL machine
+- make UPDATES -> DO TESTING and ANYTHING NECESSARY
+- PUSH them to YOUR FORK repository
+- CREATE PR (Pull Request) AGAINST the ORIGIN repository
